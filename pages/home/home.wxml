@@ -1,0 +1,14 @@
+<!-- 顶部导航栏 -->
+<cu-custom bgColor="bg-white">
+    <view slot="content">小白盒</view>
+</cu-custom>
+<!-- 搜索框 -->
+<view class="box">
+    <view class="cu-bar search bg-white">
+        <image src="../../sucai/logo/小白盒logo.png" class="logo"></image>
+        <view class="search-form round">
+            <text class="cuIcon-search"></text>
+            <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+        </view>
+    </view>
+</view>
