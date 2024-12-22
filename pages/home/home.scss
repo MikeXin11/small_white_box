@@ -1,0 +1,36 @@
+.logo{
+    width: 65rpx;
+    height:65rpx;
+    margin-left: 30rpx;
+}
+.userCard{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    background-color: var(--white);
+    margin: 10rpx 0 0 0;
+    .userinfo{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 5rpx;
+        .userPicture{
+            width: 40rpx;
+            height:40rpx;
+            border-radius: 50%;
+            margin-right: 10rpx;
+        }
+        .username{
+            display: inline;
+            margin-right: 10rpx;
+        }
+    }
+    .usertitle{
+        font-weight:550;
+    }
+    
+
+}
+
+
+
+

@@ -5,6 +5,9 @@
     "include": []
   },
   "setting": {
+    "useCompilerPlugins": [
+      "sass"
+    ],
     "urlCheck": true,
     "es6": true,
     "postcss": true,

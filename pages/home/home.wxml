@@ -12,3 +12,39 @@
         </view>
     </view>
 </view>
+<!-- 顶部导航栏 -->
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="cu-item {{index==TabCur?'text-black cur':'text-gray'}}" wx:for="{{recommend}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+        {{item}}
+    </view>
+</scroll-view>
+<!-- 文章内容 -->
+<view wx:for="{{userInfo}}">
+    <view class="cu-card dynamic {{isCard?'no-card':''}}">
+        <view class="userCard">
+            <view class="userinfo padding-lr-sm padding-top-xs">
+                <image src="{{item.userPicture}}" class="userPicture"></image>
+                <text class="username">{{item.userName}}</text>
+                <text class="iconfont icon-icon-test{{item.userGrade}}"></text>
+            </view>
+            <view class="usertitle text-black padding-lr-sm">
+                {{item.userTitle}}
+            </view>
+            <view class="padding-lr-sm">
+                {{item.userText}}
+            </view>
+            <view class="bg-white padding-sm">
+                <view class="grid col-3 grid-square">
+                    <view class="bg-img" wx:for="{{item.userPostPicture.pictureNum}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key style="background-image:url('{{item.userPostPicture.pictureBase}}{{innerIndex+1}}.png');"></view>
+                </view>
+            </view>
+            <view class="text-gray text-lg text-right padding-bottom-sm padding-right-sm">
+                <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+                <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 底部导航栏 -->

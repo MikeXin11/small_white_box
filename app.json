@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/home/home",
-    "pages/me/me"
+    "pages/userSetting/userSetting",
+    "pages/me/me",
+    "pages/add/add",
+    "pages/personalUpdates/personalUpdates"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -9,6 +13,31 @@
     "navigationBarTitleText": "ColorUI",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle":"white",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "sucai/tabbaricon/index.png",
+        "selectedIconPath": "sucai/tabbaricon/index-active.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "iconPath": "sucai/tabbaricon/add.png",
+        "selectedIconPath": "sucai/tabbaricon/add.png"
+      },
+
+      {
+        "pagePath": "pages/me/me",
+        "text": "首页",
+        "iconPath": "sucai/tabbaricon/profile.png",
+        "selectedIconPath": "sucai/tabbaricon/profile-active.png"
+      }
+
+    ]
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

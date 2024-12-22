@@ -1,12 +1,42 @@
 // pages/me/me.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    mainUserInfo:{
+      "name":"不是你的呆毛",
+      "picture":"../../sucai/userpicture/usermain.png",
+      "personalSignature":"点击编辑个人签名",
+      "grade":8
+    }
   },
+      toSet(e){
+        console.log(e);
+        wx.navigateTo({
+          url: '/pages/userSetting/userSetting'
+        })
+      },
+      toPersonUpdates(e){
+        console.log(1);
+        wx.redirectTo({
+          url: '/pages/personalUpdates/personalUpdates',
+        })
+      },
+      toScan(){
+        wx.showToast({
+          title: '当前版本不支持', //提示的内容
+          duration: 2000, //持续的时间
+          icon: 'error', //图标有success、error、loading、none四种
+          mask: true //显示透明蒙层 防止触摸穿透
+       })
+      },
+      toMessage(){
+        wx.showToast({
+          title: '当前版本不支持', //提示的内容
+          duration: 2000, //持续的时间
+          icon: 'error', //图标有success、error、loading、none四种
+          mask: true //显示透明蒙层 防止触摸穿透
+       })
+      },
 
   /**
    * 生命周期函数--监听页面加载

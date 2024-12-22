@@ -1,0 +1,128 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+    <view slot="backText"></view>
+    <view slot="content" class="text-bold">设置</view>
+</cu-custom>
+<!-- 设置信息栏 -->
+<view class="cu-list menu card-menu">
+    <view class="cu-item arrow" style="padding-right: 60rpx;">
+        <view class="flex align-center">
+            <view style="background-image:url({{userSetting.userPicture}});" class="cu-avatar round lg margin-tb-sm"></view>
+            <view class="flex align-center padding-left-sm ">
+                <view>
+                    <view>{{userSetting.userName}}</view>
+                    <view class="text-gray">ID:{{userSetting.userId}}</view>
+                </view>
+                <text class="content text-gray" style="padding-left: 250rpx;margin-right: 10rpx;">修改</text>
+            </view>
+
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">头像框设置</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">我的收货地址</text>
+        </view>
+    </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-sm">
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">安全与绑定</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">游戏账号管理</text>
+        </view>
+    </view>
+</view>
+
+<view class="cu-list menu card-menu">
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">推送设置</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">通用设置</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">隐私设置</text>
+        </view>
+    </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-sm">
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">帮助中心&问题反馈</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">开发者服务</text>
+        </view>
+    </view>
+    <view class="cu-item arrow" style="padding-right: 75rpx;">
+        <view class="content flex justify-between align-center">
+            <text class="text-black text-bold">关于小白盒</text>
+            <text class="text-gray">当前版本：{{userSetting.versionID}}</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">邀请好友</text>
+        </view>
+    </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-sm">
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">用户协议</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">隐私政策</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">个人信息收集清单</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">第三方信息共享清单</text>
+        </view>
+    </view>
+    <view class="cu-item arrow">
+        <view class="content">
+            <text class="text-black text-bold">证照信息</text>
+        </view>
+    </view>
+</view>
+
+<!-- 退出登录 -->
+<view class="cu-list menu card-menu margin-top-sm">
+    <view bindtap="toLogOut" class="cu-item">
+        <text class="text-xl text-black text-bold text-lg flex-sub text-center">退出登录</text>
+    </view>
+</view>
+
+<view class="flex justify-center padding margin-bottom-xl text-gray align-center" style="padding-bottom: 60px;">
+    <text class="iconfont icon-hDeftg_"></text>
+    <view class="flex flex-direction text-sm text-bold align-center">
+        <view>小白盒</view>
+        <view>v{{userSetting.versionID}}</view>
+    </view>
+</view>
