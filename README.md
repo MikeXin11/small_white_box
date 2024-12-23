@@ -1,1 +1,6 @@
-"# small_white_box"  
+期末实训任务：
+写一个微信小程序
+
+借助colorUI模仿小黑盒app
+
+未完成！
