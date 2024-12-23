@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<cu-custom bgColor="bg-gradual-white" isBack="{{true}}">
+</cu-custom>
+<view class="flex flex-direction">
+    <!-- 用户手机登录 -->
+    <view class=" text-bold margin-top-xl" style="font-size: 65rpx;font-weight:550;margin-left: 40rpx;">输入验证码</view>
+    <view class="text-xl text-gray" style="margin-left: 40rpx; margin-top: 40rpx;">
+        {{phoneNumber}}
+    </view>
+    <view class="cu-form-group" style="border-bottom: 1rpx solid rgb(221, 212, 212);margin-top: 40rpx;padding-right:0rpx;padding-left:0rpx;margin-left:50rpx;margin-right:50rpx;">
+        <input type="number" value="{{codeNumber}}" bindinput="codeInput" class="text-gray" style="margin-left:60rpx;font-size: 40rpx;"></input>
+    </view>
+
+    <!-- 验证码错误提示 -->
+    <text class="text-red text-center margin-top-sm " style="visibility: {{isError?'':'hidden'}};">验证码错误，请重新获取</text>
+
+    <!-- 获取验证码 -->
+    <button bindtap="toResend" disabled="{{!isActive}}" class="cu-btn lg margin-xl {{isActive?'text-white':'text-gray'}}" style="background-color:{{isActive?'rgb(21, 24, 29)':'rgb(245, 245, 245)'}};margin-top: 30rpx;">重新发送{{timeContent}}</button>
+
+    <!-- 底部log -->
+    <view class="flex justify-center padding margin-bottom-xl text-black align-center" style="padding-bottom: 150rpx;padding-top: 750rpx;">
+        <text class="iconfont icon-hDeftg_"></text>
+        <view class="flex flex-direction text-lg text-bold align-center">
+            <view>小白盒</view>
+        </view>
+    </view>
+</view>

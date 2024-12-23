@@ -8,13 +8,15 @@ Page({
     phoneNumber:'',
     val:0,
     isActive:false,
-    isChecked:false
+    isChecked:false,
+    isError:false
     },
   phoneInput(e){
     let phone=e.detail.value;
     if(phone!=''){
       this.setData({
-        isActive:true
+        isActive:true,
+        phoneNumber:phone
       })
     }else{
       this.setData({
@@ -35,10 +37,30 @@ Page({
   },
   showModal(e) {
     let isChecked=this.data.isChecked;
+    let length=this.data.phoneNumber.length;
     if(!isChecked){
       this.setData({
         modalName: e.currentTarget.dataset.target
       })
+    }else{
+      //如果勾选了，就判断手机号的长度是否是11位
+      if(length===11){
+        //手机长度是11位数则跳转到获取验证码的界面
+        this.setData({
+          isError:false
+        })
+        wx.setStorageSync('phoneNumber', this.data.phoneNumber);
+        //模拟手机获取到了验证码
+        wx.setStorageSync('code', '1234')
+        wx.navigateTo({
+          url: '/pages/getCodes/getCodes',
+        })
+      }else{
+        //否则无法获取验证码
+        this.setData({
+          isError:true
+        })
+      }
     }
     const action = e.currentTarget.dataset.action;
     if(isChecked&&action==="otherLogin"){

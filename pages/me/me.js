@@ -2,12 +2,7 @@
 Page({
 
   data: {
-    mainUserInfo:{
-      "name":"不是你的呆毛",
-      "picture":"../../sucai/userpicture/usermain.png",
-      "personalSignature":"点击编辑个人签名",
-      "grade":8
-    }
+    mainUserInfo:{}
   },
       toSet(e){
         console.log(e);
@@ -37,12 +32,39 @@ Page({
           mask: true //显示透明蒙层 防止触摸穿透
        })
       },
+      toLogin(){
+        let loginStatus=this.data.mainUserInfo.loginStatus;
+        if(!loginStatus){
+          wx.navigateTo({
+            url: '/pages/login/login',
+          })
+        }
+      },
+
+      getMainUserInfo(){
+        let mainUserInfo=wx.getStorageSync('mainUserInfo');
+        if(mainUserInfo===''){
+          mainUserInfo={
+            name:"点击登录",
+            picture:"../../sucai/userpicture/unLogin.png",
+            personalSignature:"登陆后解锁更多精彩内容~",
+            loginStatus:false
+          }
+          this.setData({
+            mainUserInfo:mainUserInfo
+          })
+        }else{
+          this.setData({
+            mainUserInfo:mainUserInfo
+          })
+        }
+      },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    
   },
 
   /**
@@ -56,7 +78,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getMainUserInfo();
   },
 
   /**

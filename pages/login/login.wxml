@@ -13,7 +13,11 @@
         <input type="number" value="{{phoneNumber}}" bindinput="phoneInput" class="text-gray" style="margin-left:60rpx;font-size: 40rpx;" placeholder="输入手机号"></input>
     </view>
 
-    <button bindtap="showModal" data-target="DialogModal1" class="cu-btn lg margin-xl {{isActive?'text-white':'text-gray'}}" style="background-color:{{isActive?'rgb(21, 24, 29)':'rgb(245, 245, 245)'}}">获取验证码</button>
+<!-- 手机号错误提示 -->
+    <text class="text-red text-center margin-top-sm " style="visibility: {{isError?'':'hidden'}};">请输入正确的手机号码</text>
+
+    <!-- 获取验证码 -->
+    <button bindtap="showModal" data-target="DialogModal1" disabled="{{!isActive}}" class="cu-btn lg margin-xl {{isActive?'text-white':'text-gray'}}" style="background-color:{{isActive?'rgb(21, 24, 29)':'rgb(245, 245, 245)'}};margin-top: 30rpx;">获取验证码</button>
 
 
     <!-- 服务协议以及隐私保护（去同意） -->
@@ -33,7 +37,6 @@
     </view>
 
 <!-- 服务协议以及隐私保护（未同意） -->
-
 <view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
         <view class="cu-dialog bg-white" style="padding-bottom:40rpx;padding-top: 40rpx;border-radius:30rpx;">
             <view class="cu-bar bg-white" style="margin-top:0rpx;">

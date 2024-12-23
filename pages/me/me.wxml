@@ -1,15 +1,16 @@
-<cu-custom bgColor="bg-gradual-white" isCustom="{{true}}">
+<cu-custom bgColor="bg-white" isCustom="{{true}}">
     <view slot="content">操作条</view>
 </cu-custom>
 
 <!-- 我的页面顶栏 -->
-<view class="flex justify-between padding-sm align-end">
+<view class="aaa flex justify-between padding-sm align-end">
     <view class="flex justify-start align-end">
-        <view class="padding-right-lg" style="font-size: 48rpx;font-weight:550;">数据</view>
-        <view bindtap="toPersonUpdates"style="font-size: 40rpx;">动态</view>
+        <view wx:if="{{!mainUserInfo.loginStatus}}" class="padding-right-lg" style="font-size: 48rpx;font-weight:400;">个人中心</view>
+        <view wx:if="{{mainUserInfo.loginStatus}}" class="padding-right-lg" style="font-size: 48rpx;font-weight:550;">数据</view>
+        <view wx:if="{{mainUserInfo.loginStatus}}" bindtap="toPersonUpdates"style="font-size: 40rpx;">动态</view>
     </view>
     <view>
-        <text bindtap="toScan" class="iconfont icon-saoyisao padding-lr-xs"></text>
+        <text wx:if="{{mainUserInfo.loginStatus}}" bindtap="toScan" class="iconfont icon-saoyisao padding-lr-xs"></text>
         <text bindtap="toSet"  class="iconfont icon-shezhi padding-lr-xs"></text>
         <text bindtap="toMessage" class="iconfont icon-message padding-lr-xs"></text>
     </view>
@@ -21,10 +22,10 @@
         <view class="content flex-sub">
             <view class="flex justify-between">
                 <view class="flex align-end">
-                    <text class="padding-right-xs">{{mainUserInfo.name}}</text>
+                    <text  bindtap="toLogin" class="padding-right-xs">{{mainUserInfo.name}}</text>
                     <text class="iconfont icon-icon-test{{mainUserInfo.grade}}"></text>
                 </view>
-                <view class="text-gray">
+                <view wx:if="{{mainUserInfo.loginStatus}}" class="text-gray">
                     <text class="cuIcon-appreciatefill margin-lr-xs"></text>0
                 </view>
             </view>
@@ -33,21 +34,21 @@
             </view>
         </view>
     </view>
-    <view class="bg-white flex justify-around padding-bottom-sm">
+    <view wx:if="{{mainUserInfo.loginStatus}}" class="bg-white flex justify-around padding-bottom-sm">
         <view class="item align-center">
-            <view class="text-bold">1</view>
+            <view class="text-bold">{{mainUserInfo.follow}}</view>
             <view class="text-gray">关注</view>
         </view>
         <view class="item align-center">
-            <view class="text-bold">0</view>
+            <view class="text-bold">{{mainUserInfo.fans}}</view>
             <view class="text-gray">粉丝</view>
         </view>
         <view class="item align-center">
-            <view class="text-bold">0</view>
+            <view class="text-bold">{{mainUserInfo.collection}}</view>
             <view class="text-gray">收藏</view>
         </view >
         <view class="item align-center">
-            <view class="text-bold">99+</view>
+            <view class="text-bold">{{mainUserInfo.history}}</view>
             <view class="text-gray">历史浏览</view>
         </view>
     </view>

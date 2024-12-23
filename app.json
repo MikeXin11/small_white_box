@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/home/home",
+    "pages/login/login",
+    "pages/getCodes/getCodes",
     "pages/userSetting/userSetting",
     "pages/me/me",
     "pages/add/add",
