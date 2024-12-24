@@ -5,8 +5,7 @@
     "pages/getCodes/getCodes",
     "pages/userSetting/userSetting",
     "pages/me/me",
-    "pages/add/add",
-    "pages/personalUpdates/personalUpdates"
+    "pages/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
