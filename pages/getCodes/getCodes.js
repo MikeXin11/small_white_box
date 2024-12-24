@@ -20,6 +20,7 @@ Page({
     if(code.length===4){
       if(code==this.data.rightCode){
         wx.setStorageSync('mainUserInfo', {
+          userId:"50351578",
           name:"不是你的呆毛",
           picture:"../../sucai/userpicture/usermain.png",
           personalSignature:"点击编辑个人签名",
@@ -28,6 +29,7 @@ Page({
           fans:0,
           collection:3,
           history:"99+",
+          "versionID":"1.3.345",
           loginStatus:true
         })
         wx.switchTab({

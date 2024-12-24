@@ -6,10 +6,7 @@ Page({
    */
   data: {
     userSetting:{
-      userId:"50351578",
-      userName:"不是你的呆毛",
-      userPicture:"../../sucai/userpicture/usermain.png",
-      "versionID":"1.3.345",
+      
     }
   },
   toLogOut(e){
@@ -17,12 +14,28 @@ Page({
       title: '你确定要退出登录吗', //提示的标题
       success: function(res) {
         if(res.confirm) {
-          console.log('用户点击了确定')
-        } else if (res.cancel) {
-          console.log('用户点击了取消')
-        }
+          wx.clearStorageSync() ;
+          wx.switchTab({
+            url: '/pages/me/me',
+          })
+        } 
       }
     })
+  },
+  getUserInfo(){
+    let userInfo=wx.getStorageSync('mainUserInfo');
+    if(userInfo===""){
+      this.setData({
+        userSetting:{
+          loginStatus:false,
+          "versionID":"1.3.345"
+        }
+      })
+    }else{
+      this.setData({
+        userSetting:userInfo
+      })
+    }
   },
 
   /**
@@ -43,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getUserInfo()
   },
 
   /**

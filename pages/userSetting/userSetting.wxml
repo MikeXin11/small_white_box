@@ -3,13 +3,13 @@
     <view slot="content" class="text-bold">设置</view>
 </cu-custom>
 <!-- 设置信息栏 -->
-<view class="cu-list menu card-menu">
+<view wx:if="{{userSetting.loginStatus}}" class="cu-list menu card-menu">
     <view class="cu-item arrow" style="padding-right: 60rpx;">
         <view class="flex align-center">
-            <view style="background-image:url({{userSetting.userPicture}});" class="cu-avatar round lg margin-tb-sm"></view>
+            <view style="background-image:url({{userSetting.picture}});" class="cu-avatar round lg margin-tb-sm"></view>
             <view class="flex align-center padding-left-sm ">
                 <view>
-                    <view>{{userSetting.userName}}</view>
+                    <view>{{userSetting.name}}</view>
                     <view class="text-gray">ID:{{userSetting.userId}}</view>
                 </view>
                 <text class="content text-gray" style="padding-left: 250rpx;margin-right: 10rpx;">修改</text>
@@ -29,7 +29,7 @@
     </view>
 </view>
 
-<view class="cu-list menu card-menu margin-top-sm">
+<view wx:if="{{userSetting.loginStatus}}" class="cu-list menu card-menu margin-top-sm">
     <view class="cu-item arrow">
         <view class="content">
             <text class="text-black text-bold">安全与绑定</text>
@@ -43,7 +43,7 @@
 </view>
 
 <view class="cu-list menu card-menu">
-    <view class="cu-item arrow">
+    <view wx:if="{{userSetting.loginStatus}}" class="cu-item arrow">
         <view class="content">
             <text class="text-black text-bold">推送设置</text>
         </view>
@@ -53,7 +53,7 @@
             <text class="text-black text-bold">通用设置</text>
         </view>
     </view>
-    <view class="cu-item arrow">
+    <view wx:if="{{userSetting.loginStatus}}" class="cu-item arrow">
         <view class="content">
             <text class="text-black text-bold">隐私设置</text>
         </view>
@@ -77,7 +77,7 @@
             <text class="text-gray">当前版本：{{userSetting.versionID}}</text>
         </view>
     </view>
-    <view class="cu-item arrow">
+    <view wx:if="{{userSetting.loginStatus}}" class="cu-item arrow">
         <view class="content">
             <text class="text-black text-bold">邀请好友</text>
         </view>
@@ -113,7 +113,7 @@
 </view>
 
 <!-- 退出登录 -->
-<view class="cu-list menu card-menu margin-top-sm">
+<view wx:if="{{userSetting.loginStatus}}" class="cu-list menu card-menu margin-top-sm">
     <view bindtap="toLogOut" class="cu-item">
         <text class="text-xl text-black text-bold text-lg flex-sub text-center">退出登录</text>
     </view>
