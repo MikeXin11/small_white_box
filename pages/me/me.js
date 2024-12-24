@@ -5,32 +5,15 @@ Page({
     mainUserInfo:{}
   },
       toSet(e){
-        console.log(e);
         wx.navigateTo({
           url: '/pages/userSetting/userSetting'
         })
       },
-      toPersonUpdates(e){
-        console.log(1);
-        wx.redirectTo({
-          url: '/pages/personalUpdates/personalUpdates',
-        })
-      },
       toScan(){
-        wx.showToast({
-          title: '当前版本不支持', //提示的内容
-          duration: 2000, //持续的时间
-          icon: 'error', //图标有success、error、loading、none四种
-          mask: true //显示透明蒙层 防止触摸穿透
-       })
+        this.notSupported();
       },
       toMessage(){
-        wx.showToast({
-          title: '当前版本不支持', //提示的内容
-          duration: 2000, //持续的时间
-          icon: 'error', //图标有success、error、loading、none四种
-          mask: true //显示透明蒙层 防止触摸穿透
-       })
+        this.notSupported();
       },
       toLogin(){
         let loginStatus=this.data.mainUserInfo.loginStatus;
@@ -39,6 +22,14 @@ Page({
             url: '/pages/login/login',
           })
         }
+      },
+      notSupported(){
+        wx.showToast({
+          title: '当前版本不支持', //提示的内容
+          duration: 1000, //持续的时间
+          icon: 'error', //图标有success、error、loading、none四种
+          mask: true //显示透明蒙层 防止触摸穿透
+       })
       },
 
       getMainUserInfo(){

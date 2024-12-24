@@ -7,11 +7,11 @@
     <view class="flex justify-start align-end">
         <view wx:if="{{!mainUserInfo.loginStatus}}" class="padding-right-lg" style="font-size: 48rpx;font-weight:400;">个人中心</view>
         <view wx:if="{{mainUserInfo.loginStatus}}" class="padding-right-lg" style="font-size: 48rpx;font-weight:550;">数据</view>
-        <view wx:if="{{mainUserInfo.loginStatus}}" bindtap="toPersonUpdates"style="font-size: 40rpx;">动态</view>
+        <view wx:if="{{mainUserInfo.loginStatus}}" bindtap="notSupported" style="font-size: 40rpx;">动态</view>
     </view>
     <view>
         <text wx:if="{{mainUserInfo.loginStatus}}" bindtap="toScan" class="iconfont icon-saoyisao padding-lr-xs"></text>
-        <text bindtap="toSet"  class="iconfont icon-shezhi padding-lr-xs"></text>
+        <text bindtap="toSet" class="iconfont icon-shezhi padding-lr-xs"></text>
         <text bindtap="toMessage" class="iconfont icon-message padding-lr-xs"></text>
     </view>
 </view>
@@ -22,7 +22,7 @@
         <view class="content flex-sub">
             <view class="flex justify-between">
                 <view class="flex align-end">
-                    <text  bindtap="toLogin" class="padding-right-xs">{{mainUserInfo.name}}</text>
+                    <text bindtap="toLogin" class="padding-right-xs">{{mainUserInfo.name}}</text>
                     <text class="iconfont icon-icon-test{{mainUserInfo.grade}}"></text>
                 </view>
                 <view wx:if="{{mainUserInfo.loginStatus}}" class="text-gray">
@@ -46,10 +46,39 @@
         <view class="item align-center">
             <view class="text-bold">{{mainUserInfo.collection}}</view>
             <view class="text-gray">收藏</view>
-        </view >
+        </view>
         <view class="item align-center">
             <view class="text-bold">{{mainUserInfo.history}}</view>
             <view class="text-gray">历史浏览</view>
         </view>
     </view>
 </view>
+
+<!-- 游戏数据 -->
+<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}" style="display: flex;justify-content: space-between;">
+    <view bindtap="notSupported" class="cu-item arrow" style="padding-right: 85px;">
+        <view class="content flex align-center">
+            <text class="iconfont icon-woderenwu"></text>
+            <text class="text-black text-bold margin-left-sm">我的任务</text>
+        </view>
+    </view>
+    <view bindtap="notSupported" class="cu-item arrow" style="padding-right: 85px;">
+        <view class="content flex align-center">
+            <text class="iconfont icon-shangcheng"></text>
+            <text class="text-black text-bold margin-left-sm">白盒商城</text>
+        </view>
+    </view>
+</view>
+<image wx:if="{{!mainUserInfo.loginStatus}}" bindtap="notSupported" src="/sucai/otherPicture/un.png" style="width:100%;height:350rpx" class="margin-right-xs margin-top-xs"></image>
+<image wx:if="{{mainUserInfo.loginStatus}}" bindtap="notSupported" src="/sucai/otherPicture/on.png" style="width:100%;height:350rpx" class="margin-right-xs margin-top-xs"></image>
+
+<!-- 轮播器 -->
+<scroll-view scroll-x class="scroll-x">
+    <image src="/sucai/scrollPicture/banner01.jpg" style="margin-left:10rpx;"></image>
+    <image src="/sucai/scrollPicture/banner02.jpg"></image>
+    <image src="/sucai/scrollPicture/banner03.jpg"></image>
+    <image src="/sucai/scrollPicture/banner04.jpg"></image>
+    <image src="/sucai/scrollPicture/banner05.jpg"></image>
+    <image src="/sucai/scrollPicture/banner06.jpg"></image>
+    <image src="/sucai/scrollPicture/banner07.jpg"></image>
+</scroll-view>

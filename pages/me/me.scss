@@ -6,3 +6,17 @@
 .aaa{
     background-color: rgb(255, 255, 255);
 }
+
+
+.scroll-x{
+    display: flex;
+    white-space: nowrap;
+    image{
+    display: inline-block;
+    width: 200rpx;
+    height: 96rpx;
+    margin-right: 10rpx;
+    border-radius: 15rpx;
+    }
+  }
+  
