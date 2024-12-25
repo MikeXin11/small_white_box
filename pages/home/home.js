@@ -44,8 +44,6 @@ Page({
           pictureBase:"../../sucai/userpost/user_02/thumb",
         }
       },
-
-
       {
         userName:"呆毛王",
         userPicture:"../../sucai/userpicture/user_03.png",
@@ -57,6 +55,28 @@ Page({
           pictureBase:"../../sucai/userpost/user_03/thumb",
         }
       },
+      {
+        userName:"吹雪さざ波",
+        userPicture:"../../sucai/userpicture/user_04.png",
+        userGrade:7,
+        userTitle:"荒野大镖客2",
+        userText:"荒野大镖客加了点mod之后的画质绝了",
+        userPostPicture:{
+          pictureNum:3,
+          pictureBase:"../../sucai/userpost/user_04/thumb",
+        }
+      },
+      {
+        userName:"阡陌",
+        userPicture:"../../sucai/userpicture/user_05.png",
+        userGrade:14,
+        userTitle:"艰难通关《恶灵附身》后贞子都变好看了",
+        userText:"直接贴镇贴图😁🤣",
+        userPostPicture:{
+          pictureNum:1,
+          pictureBase:"../../sucai/userpost/user_05/thumb",
+        }
+      }
     ]
   },
   

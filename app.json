@@ -32,7 +32,7 @@
 
       {
         "pagePath": "pages/me/me",
-        "text": "首页",
+        "text": "我的",
         "iconPath": "sucai/tabbaricon/profile.png",
         "selectedIconPath": "sucai/tabbaricon/profile-active.png"
       }

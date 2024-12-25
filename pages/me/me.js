@@ -2,7 +2,95 @@
 Page({
 
   data: {
-    mainUserInfo:{}
+    mainUserInfo:{},
+    TabCur: 1,
+    gamesData:[
+      {
+        gameName:"Apex 英雄",
+        gameLogo:"../../sucai/gamePicture/Apex.jpg",
+        gameTime:"239 h",
+        gameProgress:"75%",
+        color:"mauve"
+      },
+      {
+        gameName:"WallPaper Engine",
+        gameLogo:"../../sucai/gamePicture/Wallpaper Engine.jpg",
+        gameTime:"208 h",
+        gameProgress:"63%",
+        color:"orange"
+      },
+      {
+        gameName:"战地风云5",
+        gameLogo:"../../sucai/scrollPicture/banner02.jpg",
+        gameTime:"7.5 h",
+        gameProgress:"15%",
+        color:"blue"
+      },
+      {
+        gameName:"荒野大镖客：救赎2",
+        gameLogo:"../../sucai/scrollPicture/banner04.jpg",
+        gameTime:"75 h",
+        gameProgress:"40%",
+        color:"blue"
+      },
+      {
+        gameName:"永劫无间",
+        gameLogo:"../../sucai/gamePicture/永劫无间.jpg",
+        gameTime:"67 h",
+        gameProgress:"50%",
+        color:"blue"
+      },
+      {
+        gameName:"冰与火之舞",
+        gameLogo:"../../sucai/gamePicture/冰与火之舞.jpg",
+        gameTime:"27 h",
+        gameProgress:"80%",
+        color:"orange"
+      },
+      {
+        gameName:"命运2",
+        gameLogo:"../../sucai/gamePicture/命运2.jpg",
+        gameTime:"18 h",
+        gameProgress:"70%",
+        color:"mauve"
+      },
+      {
+        gameName:"恶灵附身2",
+        gameLogo:"../../sucai/scrollPicture/banner01.jpg",
+        gameTime:"17 h",
+        gameProgress:"60%",
+        color:"mauve"
+      },
+      {
+        gameName:"精灵与萤火意志",
+        gameLogo:"../../sucai/scrollPicture/banner03.jpg",
+        gameTime:"15 h",
+        gameProgress:"44%",
+        color:"olive"
+      },
+      {
+        gameName:"泰坦陨落2",
+        gameLogo:"../../sucai/scrollPicture/banner06.jpg",
+        gameTime:"11 h",
+        gameProgress:"80%",
+        color:"mauve"
+      },
+      {
+        gameName:"泰拉瑞亚",
+        gameLogo:"../../sucai/gamePicture/泰拉瑞亚.jpg",
+        gameTime:"11 h",
+        gameProgress:"44%",
+        color:"olive"
+      },
+      {
+        gameName:"星球大战 绝地：陨落的...",
+        gameLogo:"../../sucai/scrollPicture/banner05.jpg",
+        gameTime:"11 h",
+        gameProgress:"90%",
+        color:"orange"
+      }
+      
+    ]
   },
       toSet(e){
         wx.navigateTo({
@@ -49,6 +137,19 @@ Page({
             mainUserInfo:mainUserInfo
           })
         }
+      },
+      tabSelect(e) {
+        this.setData({
+          TabCur: e.currentTarget.dataset.id,
+        })
+      },
+      onPageScroll(){
+        let that = this;
+        setTimeout(function() {
+          that.setData({
+            loading: true
+          })
+        }, 500)
       },
 
   /**
